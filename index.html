@@ -6,10 +6,9 @@
     <title>دکتر فاطمه فاضلی ثانی | روانشناس بالینی و سلامت | رزرو نوبت</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #1a5f7a;
@@ -17,1183 +16,1199 @@
             --accent-color: #9c4d9b;
             --light-color: #f8f9fa;
             --dark-color: #2c3e50;
-            --success-color: #28a745;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            --border-radius: 12px;
-            --mobile-padding: 16px;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --border-radius: 16px;
+            --border-radius-sm: 12px;
+            --spacing-xs: 8px;
+            --spacing-sm: 12px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
         
         body {
-            font-family: 'Vazirmatn', 'Noto Naskh Arabic', sans-serif;
+            font-family: 'Vazirmatn', sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f9f9f9;
-            -webkit-tap-highlight-color: transparent;
-            -webkit-font-smoothing: antialiased;
+            background-color: #f8fafc;
+            padding-bottom: env(safe-area-inset-bottom);
         }
         
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            color: var(--dark-color);
-        }
-        
-        /* هدر موبایل */
+        /* ========== هدر موبایل ========== */
         .mobile-header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: fixed;
             top: 0;
             right: 0;
             left: 0;
-            z-index: 1000;
-            padding: 12px 16px;
+            height: 64px;
+            background: linear-gradient(135deg, #1a5f7a 0%, #2c8bb8 100%);
+            color: white;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            height: 60px;
+            justify-content: space-between;
+            padding: 0 var(--spacing-md);
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
         }
         
-        .mobile-nav-toggle {
-            background: none;
-            border: none;
-            font-size: 1.4rem;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .logo-icon {
+            font-size: 1.8rem;
+            color: white;
+        }
+        
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.1rem;
+            line-height: 1.2;
+        }
+        
+        .logo-subtext {
+            font-size: 0.75rem;
+            opacity: 0.9;
+        }
+        
+        .header-booking-btn {
+            background-color: white;
             color: var(--primary-color);
-            width: 44px;
-            height: 44px;
+            border: none;
+            border-radius: 50px;
+            padding: 8px 16px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s ease;
+        }
+        
+        .header-booking-btn:active {
+            transform: scale(0.95);
+            background-color: #f0f7fa;
+        }
+        
+        /* ========== دکمه‌های اصلی ========== */
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            width: 100%;
+        }
+        
+        .btn-primary-lg {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2c8bb8 100%);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg) var(--spacing-xl);
+            font-weight: 700;
+            font-size: 1.1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            transition: all 0.2s ease;
+            gap: var(--spacing-sm);
+            width: 100%;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            min-height: 56px;
         }
         
-        .mobile-nav-toggle:active {
-            background-color: rgba(26, 95, 122, 0.1);
+        .btn-primary-lg:active {
+            transform: translateY(2px);
+            box-shadow: var(--shadow-sm);
         }
         
-        .mobile-nav-menu {
-            position: fixed;
-            top: 60px;
-            right: 0;
-            bottom: 0;
-            width: 280px;
-            background-color: white;
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
-            z-index: 999;
-            overflow-y: auto;
-        }
-        
-        .mobile-nav-menu.active {
-            transform: translateX(0);
-        }
-        
-        .mobile-nav-overlay {
-            position: fixed;
-            top: 60px;
-            right: 0;
-            bottom: 0;
+        .btn-primary-lg::after {
+            content: '';
+            position: absolute;
+            top: 0;
             left: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 998;
-            display: none;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(255,255,255,0.1), transparent);
+            pointer-events: none;
         }
         
-        .mobile-nav-overlay.active {
-            display: block;
-        }
-        
-        .mobile-nav-link {
-            display: block;
-            padding: 14px 0;
-            font-weight: 500;
-            color: var(--dark-color);
-            text-decoration: none;
-            border-bottom: 1px solid #f0f0f0;
-            transition: all 0.2s ease;
-        }
-        
-        .mobile-nav-link:active {
+        .btn-secondary-lg {
+            background-color: white;
             color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg) var(--spacing-xl);
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            width: 100%;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            min-height: 56px;
+        }
+        
+        .btn-secondary-lg:active {
             background-color: rgba(26, 95, 122, 0.05);
-            padding-right: 10px;
+            transform: translateY(2px);
         }
         
-        .mobile-nav-link i {
-            width: 24px;
-            margin-left: 10px;
+        .btn-icon {
+            font-size: 1.2rem;
         }
         
-        /* بخش هیرو موبایل */
-        .hero-section-mobile {
-            background: linear-gradient(135deg, rgba(26, 95, 122, 0.95) 0%, rgba(87, 166, 199, 0.9) 100%), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 20px 40px;
-            margin-top: 60px;
+        /* ========== بخش معرفی ========== */
+        .hero-section {
+            padding: 84px var(--spacing-md) var(--spacing-xl);
+            background: linear-gradient(135deg, #f0f7fa 0%, #e1f0f7 100%);
+            margin-top: 64px;
             text-align: center;
+            border-bottom-left-radius: var(--border-radius);
+            border-bottom-right-radius: var(--border-radius);
         }
         
-        .hero-title-mobile {
-            font-size: 1.8rem;
-            margin-bottom: 16px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        .doctor-avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .hero-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: var(--spacing-sm);
             line-height: 1.3;
         }
         
-        .hero-subtitle-mobile {
+        .hero-subtitle {
             font-size: 1rem;
-            margin-bottom: 24px;
-            opacity: 0.9;
+            color: #555;
+            margin-bottom: var(--spacing-lg);
             line-height: 1.5;
         }
         
-        .doctor-photo-mobile {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid white;
-            box-shadow: var(--shadow);
-            margin: 0 auto 24px;
+        /* ========== کادرهای اطلاعاتی ========== */
+        .section-container {
+            padding: var(--spacing-xl) var(--spacing-md);
         }
         
-        /* دکمه‌های موبایل */
-        .btn-mobile-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            padding: 14px 24px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            width: 100%;
-            margin-bottom: 12px;
-            transition: all 0.2s ease;
-        }
-        
-        .btn-mobile-primary:active {
-            background-color: var(--secondary-color);
-            border-color: var(--secondary-color);
-            transform: scale(0.98);
-        }
-        
-        .btn-mobile-outline {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-            padding: 14px 24px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            width: 100%;
-            margin-bottom: 12px;
-        }
-        
-        .btn-mobile-outline:active {
-            background-color: rgba(26, 95, 122, 0.1);
-        }
-        
-        /* بخش‌های اصلی موبایل */
-        .mobile-section {
-            padding: 30px var(--mobile-padding);
-        }
-        
-        .mobile-section-title {
-            position: relative;
-            margin-bottom: 30px;
-            padding-bottom: 12px;
+        .section-title {
             font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: var(--spacing-lg);
+            position: relative;
+            padding-right: var(--spacing-md);
         }
         
-        .mobile-section-title:after {
+        .section-title::after {
             content: '';
             position: absolute;
-            bottom: 0;
             right: 0;
+            bottom: -8px;
             width: 60px;
             height: 3px;
-            background-color: var(--accent-color);
+            background: linear-gradient(to left, var(--primary-color), var(--accent-color));
             border-radius: 2px;
         }
         
-        /* کارت موبایل */
-        .mobile-card {
+        .info-card {
             background-color: white;
             border-radius: var(--border-radius);
-            padding: 20px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-            margin-bottom: 20px;
-            border: none;
-            transition: transform 0.2s ease;
-        }
-        
-        .mobile-card:active {
-            transform: translateY(-2px);
-        }
-        
-        /* فرم رزرو موبایل */
-        .booking-section-mobile {
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 24px 20px;
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-        
-        .form-control-mobile {
-            padding: 14px 16px;
-            border-radius: 10px;
-            border: 1px solid #ddd;
-            font-size: 1rem;
-            margin-bottom: 16px;
-            width: 100%;
-            transition: all 0.2s ease;
-        }
-        
-        .form-control-mobile:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(26, 95, 122, 0.1);
-            outline: none;
-        }
-        
-        /* انتخاب تاریخ و ساعت در موبایل */
-        .time-slots-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .time-slot-mobile {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 12px 8px;
-            text-align: center;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            background-color: white;
-        }
-        
-        .time-slot-mobile:active {
-            background-color: rgba(26, 95, 122, 0.1);
-            border-color: var(--primary-color);
-        }
-        
-        .time-slot-mobile.selected {
-            background-color: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-        }
-        
-        /* مودال رسید موبایل */
-        .receipt-modal-mobile .modal-dialog {
-            margin: 10px;
-            max-height: 90vh;
-            display: flex;
-            align-items: center;
-            min-height: 90vh;
-        }
-        
-        .receipt-modal-mobile .modal-content {
-            border-radius: 16px;
-            overflow: hidden;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-        
-        .receipt-container-mobile {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 24px 20px;
-            border: 2px solid var(--primary-color);
-            border-radius: 12px;
-            position: relative;
-        }
-        
-        .receipt-number-mobile {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.8rem;
-        }
-        
-        .receipt-title-mobile {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-bottom: 8px;
-            text-align: center;
-        }
-        
-        .receipt-subtitle-mobile {
-            color: var(--dark-color);
-            font-size: 0.9rem;
-            text-align: center;
-            margin-bottom: 24px;
-        }
-        
-        .receipt-row-mobile {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px dashed #ccc;
-        }
-        
-        .receipt-label-mobile {
-            font-weight: 600;
-            color: var(--dark-color);
-            font-size: 0.95rem;
-        }
-        
-        .receipt-value-mobile {
-            color: #555;
-            text-align: left;
-            font-size: 0.9rem;
-            max-width: 60%;
-        }
-        
-        /* فوتر موبایل */
-        .mobile-footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 40px var(--mobile-padding) 30px;
-            margin-top: 40px;
-        }
-        
-        .mobile-footer-section {
-            margin-bottom: 30px;
-        }
-        
-        .mobile-footer-title {
-            font-size: 1.2rem;
-            margin-bottom: 16px;
-            color: white;
-        }
-        
-        .mobile-footer-link {
-            display: block;
-            color: #ddd;
-            text-decoration: none;
-            padding: 8px 0;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-        
-        .mobile-footer-link:active {
-            color: white;
-        }
-        
-        .mobile-social-icons {
-            display: flex;
-            gap: 12px;
-            margin-top: 16px;
-        }
-        
-        .mobile-social-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            transition: all 0.2s ease;
-        }
-        
-        .mobile-social-icon:active {
-            background-color: rgba(255, 255, 255, 0.2);
-            transform: scale(0.95);
-        }
-        
-        .mobile-copyright {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-            text-align: center;
-            color: #aaa;
-            font-size: 0.85rem;
-            margin-top: 30px;
-        }
-        
-        /* اسکرول نرم برای موبایل */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* بهبود تایپوگرافی برای موبایل */
-        p, li, .form-text {
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        
-        /* هامبورگر منو انیمیشن */
-        .hamburger {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 24px;
-            height: 18px;
-        }
-        
-        .hamburger span {
-            display: block;
-            height: 2px;
-            width: 100%;
-            background-color: var(--primary-color);
-            border-radius: 2px;
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0,0,0,0.05);
             transition: all 0.3s ease;
         }
         
-        .hamburger.active span:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
+        .info-card:active {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
         }
         
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
         }
         
-        .hamburger.active span:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
-        
-        /* دکمه برگشت به بالا */
-        .back-to-top {
-            position: fixed;
-            bottom: 80px;
-            left: 20px;
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 50%;
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: white;
             font-size: 1.2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            z-index: 99;
+        }
+        
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+        
+        .card-content {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .clinic-list, .schedule-list {
+            list-style: none;
+        }
+        
+        .clinic-list li, .schedule-list li {
+            padding: var(--spacing-sm) 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .clinic-list li:last-child, .schedule-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .clinic-icon, .schedule-icon {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            min-width: 24px;
+        }
+        
+        .schedule-time {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        /* ========== فرم رزرو ========== */
+        .booking-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #edf5fa 100%);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-xl);
+            margin: var(--spacing-md) 0 var(--spacing-xl);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .form-group {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: var(--spacing-sm);
+            font-size: 1rem;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: var(--spacing-md);
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius-sm);
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 1rem;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(26, 95, 122, 0.1);
+        }
+        
+        .form-select {
+            width: 100%;
+            padding: var(--spacing-md);
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius-sm);
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 1rem;
+            background-color: white;
+            color: #333;
+        }
+        
+        .form-textarea {
+            width: 100%;
+            padding: var(--spacing-md);
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius-sm);
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 1rem;
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .date-time-selector {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
+        }
+        
+        .time-slot-btn {
+            padding: var(--spacing-sm);
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius-sm);
+            background-color: white;
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.2s ease;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .time-slot-btn.selected {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .time-slot-btn:active:not(.selected) {
+            background-color: #f5f5f5;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            font-weight: 700;
+            font-size: 1.1rem;
+            width: 100%;
+            margin-top: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:active {
+            transform: translateY(2px);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        /* ========== بخش سوابق ========== */
+        .experience-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .experience-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .experience-details {
+            color: #555;
+            line-height: 1.7;
+            padding-right: var(--spacing-sm);
+        }
+        
+        /* ========== رسید رزرو ========== */
+        .receipt-modal {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-md);
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
         }
         
-        .back-to-top.active {
+        .receipt-modal.active {
             opacity: 1;
             visibility: visible;
         }
         
-        .back-to-top:active {
-            background-color: var(--secondary-color);
+        .receipt-container {
+            background-color: white;
+            border-radius: var(--border-radius);
+            width: 100%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+        
+        .receipt-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2c8bb8 100%);
+            color: white;
+            padding: var(--spacing-xl);
+            text-align: center;
+            border-top-left-radius: var(--border-radius);
+            border-top-right-radius: var(--border-radius);
+        }
+        
+        .receipt-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .receipt-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .receipt-body {
+            padding: var(--spacing-xl);
+        }
+        
+        .receipt-row {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--spacing-sm) 0;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .receipt-label {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .receipt-value {
+            color: #555;
+            text-align: left;
+            max-width: 60%;
+        }
+        
+        .receipt-actions {
+            display: flex;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-lg);
+            border-top: 1px solid #eee;
+        }
+        
+        .receipt-btn {
+            flex: 1;
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-sm);
+            font-weight: 600;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .receipt-btn-print {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2c8bb8 100%);
+            color: white;
+        }
+        
+        .receipt-btn-close {
+            background-color: #f5f5f5;
+            color: #555;
+        }
+        
+        /* ========== فوتر ========== */
+        .footer {
+            background: linear-gradient(135deg, var(--dark-color) 0%, #34495e 100%);
+            color: white;
+            padding: var(--spacing-xl) var(--spacing-md);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .footer-section {
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .footer-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            color: white;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-xs) 0;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-links a:active {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+        
+        .social-link {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.2s ease;
+        }
+        
+        .social-link:active {
+            background-color: rgba(255,255,255,0.2);
             transform: scale(0.95);
         }
         
-        /* استایل‌های چاپ برای موبایل */
-        @media print {
-            .mobile-header,
-            .back-to-top,
-            .no-print-mobile {
-                display: none !important;
-            }
-            
-            body {
-                padding: 0;
-                margin: 0;
-            }
+        .copyright {
+            text-align: center;
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.85rem;
+            line-height: 1.5;
         }
         
-        /* برای دستگاه‌های بزرگتر */
-        @media (min-width: 992px) {
-            .mobile-only {
-                display: none !important;
-            }
+        /* ========== بهبودهای اضافی ========== */
+        .note-box {
+            background-color: #fff9e6;
+            border-right: 4px solid #f1c40f;
+            border-radius: var(--border-radius-sm);
+            padding: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
         
-        /* برای دستگاه‌های کوچک */
-        @media (max-width: 991px) {
-            .desktop-only {
-                display: none !important;
+        .note-box i {
+            color: #f1c40f;
+            margin-left: var(--spacing-xs);
+        }
+        
+        .badge {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: var(--spacing-sm);
+        }
+        
+        /* ========== رسپانسیو ========== */
+        @media (min-width: 768px) {
+            .hero-section {
+                padding: 100px var(--spacing-xl) var(--spacing-xl);
             }
             
-            .hero-section-mobile {
-                padding-top: 80px;
-                padding-bottom: 30px;
+            .section-container {
+                padding: var(--spacing-xl) var(--spacing-xl);
             }
             
-            .time-slots-container {
+            .btn-container {
+                flex-direction: row;
+                gap: var(--spacing-md);
+            }
+            
+            .btn-primary-lg, .btn-secondary-lg {
+                flex: 1;
+            }
+            
+            .date-time-selector {
                 grid-template-columns: repeat(4, 1fr);
             }
         }
         
-        /* برای موبایل‌های خیلی کوچک */
-        @media (max-width: 480px) {
-            .time-slots-container {
-                grid-template-columns: repeat(3, 1fr);
+        @media (max-width: 360px) {
+            .date-time-selector {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            .hero-title-mobile {
-                font-size: 1.6rem;
+            .hero-title {
+                font-size: 1.4rem;
             }
             
-            .mobile-section {
-                padding: 24px 16px;
+            .section-title {
+                font-size: 1.2rem;
             }
+        }
+        
+        /* اسکرول نرم */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* جلوگیری از هایلایت روی تاپ */
+        * {
+            -webkit-tap-highlight-color: transparent;
         }
     </style>
 </head>
 <body>
     <!-- هدر موبایل -->
-    <header class="mobile-header mobile-only">
-        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="منو">
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+    <header class="mobile-header">
+        <div class="logo-container">
+            <i class="fas fa-brain logo-icon"></i>
+            <div>
+                <div class="logo-text">دکتر فاطمه فاضلی ثانی</div>
+                <div class="logo-subtext">روانشناس بالینی و سلامت</div>
             </div>
+        </div>
+        
+        <button class="header-booking-btn" onclick="scrollToBooking()">
+            <i class="fas fa-calendar-check"></i>
+            رزرو
         </button>
-        
-        <div class="navbar-brand-mobile">
-            <i class="fas fa-brain me-2"></i>دکتر فاطمه فاضلی ثانی
-        </div>
-        
-        <a href="#booking" class="btn-mobile-primary" style="width: auto; padding: 8px 16px; font-size: 0.9rem;">
-            <i class="fas fa-calendar-check me-1"></i>رزرو
-        </a>
     </header>
-    
-    <!-- منوی موبایل -->
-    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
-    
-    <nav class="mobile-nav-menu" id="mobileNavMenu">
-        <a href="#" class="mobile-nav-link" data-section="home">
-            <i class="fas fa-home"></i>خانه
-        </a>
-        <a href="#about" class="mobile-nav-link" data-section="about">
-            <i class="fas fa-user-md"></i>درباره دکتر
-        </a>
-        <a href="#booking" class="mobile-nav-link" data-section="booking">
-            <i class="fas fa-calendar-plus"></i>رزرو نوبت
-        </a>
-        <a href="#specialties" class="mobile-nav-link" data-section="specialties">
-            <i class="fas fa-star"></i>حوزه تخصصی
-        </a>
-        <a href="#publications" class="mobile-nav-link" data-section="publications">
-            <i class="fas fa-book"></i>کتاب‌ها
-        </a>
-        <a href="#contact" class="mobile-nav-link" data-section="contact">
-            <i class="fas fa-phone-alt"></i>تماس
-        </a>
-        <div class="mt-4 pt-3 border-top">
-            <a href="tel:02188888888" class="mobile-nav-link text-success">
-                <i class="fas fa-phone"></i>تماس تلفنی: ۰۲۱-۸۸۸۸۸۸۸۸
-            </a>
-        </div>
-    </nav>
 
-    <!-- بخش معرفی موبایل -->
-    <section class="hero-section-mobile mobile-only" id="home">
+    <!-- بخش معرفی -->
+    <section class="hero-section">
         <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-             alt="دکتر فاطمه فاضلی ثانی" class="doctor-photo-mobile">
+             alt="دکتر فاطمه فاضلی ثانی" class="doctor-avatar">
         
-        <h1 class="hero-title-mobile">دکتر فاطمه فاضلی ثانی</h1>
-        <h2 class="hero-subtitle-mobile">دکترای روانشناسی بالینی | روانشناس بالینی و سلامت | مدرس دانشگاه | متخصص درمان هیجان‌مدار (EFT)</h2>
+        <h1 class="hero-title">دکتر فاطمه فاضلی ثانی</h1>
+        <p class="hero-subtitle">
+            دکترای روانشناسی بالینی | روانشناس بالینی و سلامت | مدرس دانشگاه<br>
+            متخصص درمان هیجان‌مدار (EFT)
+        </p>
         
-        <div class="mt-4">
-            <a href="#booking" class="btn-mobile-primary">
-                <i class="fas fa-calendar-plus me-2"></i>رزرو نوبت آنلاین
-            </a>
-            <a href="#about" class="btn-mobile-outline">
-                <i class="fas fa-user-md me-2"></i>مشاهده سوابق
-            </a>
+        <div class="btn-container">
+            <button class="btn-primary-lg" onclick="scrollToBooking()">
+                <i class="fas fa-calendar-plus btn-icon"></i>
+                رزرو نوبت آنلاین
+            </button>
+            <button class="btn-secondary-lg" onclick="scrollToAbout()">
+                <i class="fas fa-user-md btn-icon"></i>
+                مشاهده سوابق
+            </button>
         </div>
     </section>
 
-    <!-- بخش اصلی رزرو نوبت (موبایل) -->
-    <section id="booking" class="mobile-section">
-        <h2 class="mobile-section-title">رزرو نوبت آنلاین</h2>
+    <!-- بخش اطلاعات کلینیک‌ها و ساعات کاری -->
+    <section class="section-container">
+        <h2 class="section-title">اطلاعات مراجعه</h2>
         
-        <div class="booking-section-mobile">
-            <div class="alert alert-info mb-3">
-                <i class="fas fa-info-circle me-2"></i>
-                لطفاً اطلاعات زیر را برای رزرو نوبت تکمیل نمایید.
+        <!-- کادر کلینیک‌های فعال -->
+        <div class="info-card">
+            <div class="card-header">
+                <div class="card-icon">
+                    <i class="fas fa-clinic-medical"></i>
+                </div>
+                <h3 class="card-title">کلینیک‌های فعال</h3>
+            </div>
+            <div class="card-content">
+                <ul class="clinic-list">
+                    <li>
+                        <i class="fas fa-map-marker-alt clinic-icon"></i>
+                        کلینیک طوس (تحت نظر دکتر رضا راد گودرزی)
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt clinic-icon"></i>
+                        کلینیک بهسا
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt clinic-icon"></i>
+                        کلینیک مانوشان
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt clinic-icon"></i>
+                        کلینیک دنیای امن
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt clinic-icon"></i>
+                        کلینیک نیکان
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- کادر ساعات کاری -->
+        <div class="info-card">
+            <div class="card-header">
+                <div class="card-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3 class="card-title">ساعات کاری</h3>
+            </div>
+            <div class="card-content">
+                <ul class="schedule-list">
+                    <li>
+                        <span class="schedule-time">شنبه تا چهارشنبه:</span>
+                        <span>۱۶:۰۰ - ۲۰:۰۰</span>
+                    </li>
+                    <li>
+                        <span class="schedule-time">پنج‌شنبه:</span>
+                        <span>۱۰:۰۰ - ۱۴:۰۰</span>
+                    </li>
+                    <li>
+                        <span class="schedule-time">جمعه:</span>
+                        <span>تعطیل</span>
+                    </li>
+                </ul>
+                
+                <div class="note-box">
+                    <i class="fas fa-info-circle"></i>
+                    نوبت‌ها محدود و با هماهنگی قبلی می‌باشند. لطفاً حداقل ۱۵ دقیقه قبل از زمان نوبت در کلینیک حاضر شوید.
+                </div>
+            </div>
+        </div>
+        
+        <!-- کادر تماس -->
+        <div class="info-card">
+            <div class="card-header">
+                <div class="card-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3 class="card-title">راه‌های ارتباطی</h3>
+            </div>
+            <div class="card-content">
+                <ul class="clinic-list">
+                    <li>
+                        <i class="fas fa-phone clinic-icon"></i>
+                        <a href="tel:02188888888" style="color: var(--primary-color); text-decoration: none;">
+                            ۰۲۱ - ۸۸۸۸۸۸۸۸
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fas fa-mobile-alt clinic-icon"></i>
+                        <a href="tel:09121234567" style="color: var(--primary-color); text-decoration: none;">
+                            ۰۹۱۲ - ۱۲۳۴۵۶۷
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope clinic-icon"></i>
+                        <a href="mailto:info@drfazelisani.ir" style="color: var(--primary-color); text-decoration: none;">
+                            info@drfazelisani.ir
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش رزرو نوبت -->
+    <section class="section-container" id="booking">
+        <h2 class="section-title">رزرو نوبت آنلاین</h2>
+        
+        <div class="booking-section">
+            <div class="form-group">
+                <label class="form-label">نام و نام خانوادگی *</label>
+                <input type="text" class="form-input" id="fullName" placeholder="نام کامل خود را وارد کنید" required>
             </div>
             
-            <form id="bookingFormMobile">
-                <input type="text" class="form-control-mobile" id="fullNameMobile" 
-                       placeholder="نام و نام خانوادگی *" required>
-                
-                <input type="tel" class="form-control-mobile" id="phoneMobile" 
-                       placeholder="شماره تماس * (مثال: 09123456789)" required>
-                
-                <input type="email" class="form-control-mobile" id="emailMobile" 
-                       placeholder="آدرس ایمیل (اختیاری)">
-                
-                <select class="form-control-mobile" id="serviceTypeMobile" required>
-                    <option value="" selected disabled>نوع خدمات درخواستی *</option>
+            <div class="form-group">
+                <label class="form-label">شماره تماس *</label>
+                <input type="tel" class="form-input" id="phone" placeholder="۰۹۱۲۳۴۵۶۷۸۹" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">آدرس ایمیل (اختیاری)</label>
+                <input type="email" class="form-input" id="email" placeholder="example@email.com">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">نوع خدمات *</label>
+                <select class="form-select" id="serviceType" required>
+                    <option value="" selected disabled>لطفاً انتخاب کنید</option>
                     <option value="individual">درمان هیجان‌مدار فردی</option>
                     <option value="couple">زوج درمانی هیجان‌مدار</option>
                     <option value="supervision">سوپرویژن درمان هیجان‌مدار</option>
                     <option value="consultation">مشاوره تخصصی</option>
                 </select>
-                
-                <div class="mb-3">
-                    <label class="form-label mb-2 d-block">انتخاب تاریخ *</label>
-                    <div class="time-slots-container" id="dateSelectionMobile">
-                        <!-- تاریخ‌ها توسط جاوااسکریپت تولید می‌شوند -->
-                    </div>
-                </div>
-                
-                <div class="mb-3">
-                    <label class="form-label mb-2 d-block">انتخاب ساعت *</label>
-                    <div class="time-slots-container" id="timeSelectionMobile">
-                        <!-- ساعت‌ها توسط جاوااسکریپت تولید می‌شوند -->
-                    </div>
-                </div>
-                
-                <textarea class="form-control-mobile" id="notesMobile" rows="3" 
-                          placeholder="توضیحات اضافه (اختیاری)"></textarea>
-                
-                <button type="submit" class="btn-mobile-primary mt-3">
-                    <i class="fas fa-paper-plane me-2"></i>ثبت درخواست رزرو نوبت
-                </button>
-            </form>
-        </div>
-        
-        <!-- اطلاعات کلینیک‌ها و ساعات کاری -->
-        <div class="mobile-card">
-            <h4 class="mb-3">
-                <i class="fas fa-map-marker-alt text-primary me-2"></i>
-                کلینیک‌های فعال
-            </h4>
-            <ul class="list-unstyled mb-0">
-                <li class="mb-2"><i class="fas fa-clinic-medical text-primary me-2"></i>کلینیک طوس</li>
-                <li class="mb-2"><i class="fas fa-clinic-medical text-primary me-2"></i>کلینیک بهسا</li>
-                <li class="mb-2"><i class="fas fa-clinic-medical text-primary me-2"></i>کلینیک مانوشان</li>
-                <li class="mb-2"><i class="fas fa-clinic-medical text-primary me-2"></i>کلینیک دنیای امن</li>
-                <li><i class="fas fa-clinic-medical text-primary me-2"></i>کلینیک نیکان</li>
-            </ul>
-        </div>
-        
-        <div class="mobile-card">
-            <h4 class="mb-3">
-                <i class="fas fa-clock text-primary me-2"></i>
-                ساعات کاری
-            </h4>
-            <ul class="list-unstyled mb-0">
-                <li class="mb-2"><strong>شنبه تا چهارشنبه:</strong> ۱۶:۰۰ - ۲۰:۰۰</li>
-                <li class="mb-2"><strong>پنج‌شنبه:</strong> ۱۰:۰۰ - ۱۴:۰۰</li>
-                <li><strong>جمعه:</strong> تعطیل</li>
-            </ul>
-            <div class="alert alert-warning mt-3 mb-0 p-2">
-                <small><i class="fas fa-exclamation-circle me-2"></i>نوبت‌ها محدود و با هماهنگی قبلی می‌باشند.</small>
             </div>
-        </div>
-    </section>
-
-    <!-- درباره دکتر (موبایل) -->
-    <section id="about" class="mobile-section bg-light">
-        <h2 class="mobile-section-title">درباره دکتر فاطمه فاضلی ثانی</h2>
-        
-        <div class="mobile-card">
-            <h4 class="mb-3">سوابق تحصیلی</h4>
-            <ul class="list-unstyled mb-0">
-                <li class="mb-3">
-                    <h5>دکترای روانشناسی سلامت</h5>
-                    <p class="text-muted mb-0">گرایش روانشناسی سلامت</p>
-                </li>
-                <li class="mb-3">
-                    <h5>کارشناسی ارشد روانشناسی بالینی</h5>
-                    <p class="text-muted mb-0">گرایش روانشناسی بالینی</p>
-                </li>
-                <li>
-                    <h5>کارشناسی روانشناسی بالینی</h5>
-                    <p class="text-muted mb-0">گرایش روانشناسی بالینی</p>
-                </li>
-            </ul>
-        </div>
-        
-        <div class="mobile-card">
-            <h4 class="mb-3">سوابق حرفه‌ای</h4>
-            <ul class="list-unstyled mb-0">
-                <li class="mb-2">مدرس دانشگاه در حوزه روانشناسی بالینی و سلامت</li>
-                <li class="mb-2">مدرس دوره‌های درمان هیجان‌مدار (EFT)</li>
-                <li>مدرس آزمون شخصیت SWAP</li>
-            </ul>
-        </div>
-        
-        <div class="mobile-card">
-            <h4 class="mb-3">عضویت‌های حرفه‌ای</h4>
-            <ul class="list-unstyled mb-0">
-                <li class="mb-2">عضو انجمن بین‌المللی درمان هیجان‌مدار (ISEFT)</li>
-                <li>عضو حرفه‌ای انجمن درمان هیجان‌مدار (ICEEFT)</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- حوزه‌های تخصصی (موبایل) -->
-    <section id="specialties" class="mobile-section">
-        <h2 class="mobile-section-title">حوزه‌های تخصصی</h2>
-        
-        <div class="mobile-card text-center">
-            <div class="icon-box-mobile mb-3">
-                <i class="fas fa-user-friends fa-2x text-primary"></i>
-            </div>
-            <h4 class="mb-2">درمان هیجان‌مدار (فردی و زوج)</h4>
-            <p class="mb-0">ارائه خدمات تخصصی درمان هیجان‌مدار برای افراد و زوج‌ها</p>
-        </div>
-        
-        <div class="mobile-card text-center">
-            <div class="icon-box-mobile mb-3">
-                <i class="fas fa-graduation-cap fa-2x text-primary"></i>
-            </div>
-            <h4 class="mb-2">آموزش و سوپرویژن</h4>
-            <p class="mb-0">آموزش تخصصی درمان هیجان‌مدار و سوپرویژن حرفه‌ای</p>
-        </div>
-        
-        <div class="mobile-card text-center">
-            <div class="icon-box-mobile mb-3">
-                <i class="fas fa-book fa-2x text-primary"></i>
-            </div>
-            <h4 class="mb-2">پژوهش و ترجمه</h4>
-            <p class="mb-0">پژوهش و ترجمه تخصصی در حوزه درمان هیجان‌مدار و ذهن‌آگاهی</p>
-        </div>
-    </section>
-
-    <!-- کتاب‌ها و تألیفات (موبایل) -->
-    <section id="publications" class="mobile-section bg-light">
-        <h2 class="mobile-section-title">کتاب‌ها و تألیفات</h2>
-        
-        <div class="mobile-card">
-            <h4 class="mb-3">کتاب‌های تألیفی</h4>
-            <ul class="list-unstyled mb-0">
-                <li class="mb-2">روانشناسی فیزیولوژیک</li>
-                <li class="mb-2">روانشناسی اعصاب و غدد درون‌ریز</li>
-                <li class="mb-2">نکات کنکوری روانشناسی فیزیولوژیک</li>
-                <li class="mb-2">آموزش درمان هیجان‌مدار</li>
-                <li class="mb-2">من و هیجاناتم</li>
-                <li>آموزش زوج‌درمانی هیجان‌مدار</li>
-            </ul>
-        </div>
-        
-        <div class="mobile-card">
-            <h4 class="mb-3">کتاب‌های ترجمه شده</h4>
-            <ul class="list-unstyled mb-0">
-                <li class="mb-2">فرمول‌بندی موردی در درمان هیجان‌مدار</li>
-                <li class="mb-2">ذهن‌آگاهی: مسیری به خودشفقتی</li>
-                <li class="mb-2">ذهن‌آگاهی</li>
-                <li class="mb-2">مطالعه موردی در درمان افسردگی</li>
-                <li>هندبوک درمان هیجان‌مدار</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- فوتر موبایل -->
-    <footer class="mobile-footer" id="contact">
-        <div class="mobile-footer-section">
-            <h4 class="mobile-footer-title">دکتر فاطمه فاضلی ثانی</h4>
-            <p>دکترای روانشناسی بالینی، روانشناس بالینی و سلامت، مدرس دانشگاه و متخصص درمان هیجان‌مدار (EFT)</p>
             
-            <div class="mobile-social-icons">
-                <a href="#" class="mobile-social-icon">
+            <div class="form-group">
+                <label class="form-label">انتخاب تاریخ *</label>
+                <div class="date-time-selector" id="dateSelection">
+                    <!-- توسط JavaScript پر می‌شود -->
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">انتخاب ساعت *</label>
+                <div class="date-time-selector" id="timeSelection">
+                    <!-- توسط JavaScript پر می‌شود -->
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">توضیحات (اختیاری)</label>
+                <textarea class="form-textarea" id="notes" placeholder="در صورت نیاز، توضیحات اضافه را وارد نمایید..."></textarea>
+            </div>
+            
+            <button class="submit-btn" onclick="submitBooking()">
+                <i class="fas fa-paper-plane"></i>
+                ثبت درخواست رزرو نوبت
+            </button>
+        </div>
+    </section>
+
+    <!-- بخش سوابق تحصیلی و حرفه‌ای -->
+    <section class="section-container" id="about">
+        <h2 class="section-title">سوابق و تجربیات</h2>
+        
+        <div class="experience-card">
+            <h3 class="experience-title">سوابق تحصیلی</h3>
+            <div class="experience-details">
+                <p>• دکترای روانشناسی سلامت</p>
+                <p>• کارشناسی ارشد روانشناسی بالینی</p>
+                <p>• کارشناسی روانشناسی بالینی</p>
+            </div>
+        </div>
+        
+        <div class="experience-card">
+            <h3 class="experience-title">سوابق حرفه‌ای</h3>
+            <div class="experience-details">
+                <p>• مدرس دانشگاه در حوزه روانشناسی بالینی و سلامت</p>
+                <p>• مدرس دوره‌های درمان هیجان‌مدار (EFT)</p>
+                <p>• مدرس آزمون شخصیت SWAP (تنها آزمون مورد تأیید انجمن روانکاوی آمریکا)</p>
+            </div>
+        </div>
+        
+        <div class="experience-card">
+            <h3 class="experience-title">عضویت‌های حرفه‌ای</h3>
+            <div class="experience-details">
+                <p>• عضو انجمن بین‌المللی درمان هیجان‌مدار (ISEFT)</p>
+                <p>• عضو حرفه‌ای انجمن درمان هیجان‌مدار (ICEEFT)</p>
+            </div>
+        </div>
+        
+        <div class="note-box">
+            <i class="fas fa-graduation-cap"></i>
+            با بیش از ۱۴ سال تجربه در حوزه روانشناسی بالینی و درمان هیجان‌مدار
+        </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer class="footer">
+        <div class="footer-section">
+            <h3 class="footer-title">دکتر فاطمه فاضلی ثانی</h3>
+            <p style="color: #ddd; line-height: 1.7; margin-bottom: var(--spacing-md);">
+                روانشناس بالینی و سلامت، مدرس دانشگاه و متخصص درمان هیجان‌مدار (EFT) با سال‌ها تجربه در حوزه روانشناسی
+            </p>
+            <div class="social-links">
+                <a href="#" class="social-link">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="#" class="mobile-social-icon">
+                <a href="#" class="social-link">
                     <i class="fab fa-telegram"></i>
                 </a>
-                <a href="#" class="mobile-social-icon">
+                <a href="#" class="social-link">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="mailto:info@drfazelisani.ir" class="mobile-social-icon">
+                <a href="#" class="social-link">
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
         </div>
         
-        <div class="mobile-footer-section">
-            <h4 class="mobile-footer-title">دسترسی سریع</h4>
-            <a href="#" class="mobile-footer-link">صفحه اصلی</a>
-            <a href="#about" class="mobile-footer-link">درباره دکتر</a>
-            <a href="#booking" class="mobile-footer-link">رزرو نوبت</a>
-            <a href="#specialties" class="mobile-footer-link">حوزه تخصصی</a>
-            <a href="#publications" class="mobile-footer-link">کتاب‌ها</a>
+        <div class="footer-section">
+            <h3 class="footer-title">دسترسی سریع</h3>
+            <ul class="footer-links">
+                <li><a href="#"><i class="fas fa-chevron-left"></i> صفحه اصلی</a></li>
+                <li><a href="#about"><i class="fas fa-chevron-left"></i> درباره دکتر</a></li>
+                <li><a href="#booking"><i class="fas fa-chevron-left"></i> رزرو نوبت</a></li>
+                <li><a href="#"><i class="fas fa-chevron-left"></i> حوزه تخصصی</a></li>
+                <li><a href="#"><i class="fas fa-chevron-left"></i> کتاب‌ها و تألیفات</a></li>
+            </ul>
         </div>
         
-        <div class="mobile-footer-section">
-            <h4 class="mobile-footer-title">اطلاعات تماس</h4>
-            <a href="tel:02188888888" class="mobile-footer-link">
-                <i class="fas fa-phone me-2"></i>۰۲۱ - ۸۸۸۸۸۸۸۸
-            </a>
-            <a href="tel:09121234567" class="mobile-footer-link">
-                <i class="fas fa-mobile-alt me-2"></i>۰۹۱۲ - ۱۲۳۴۵۶۷
-            </a>
-            <a href="mailto:info@drfazelisani.ir" class="mobile-footer-link">
-                <i class="fas fa-envelope me-2"></i>info@drfazelisani.ir
-            </a>
-            <p class="mt-3 mb-0">
-                <i class="fas fa-map-marker-alt me-2"></i>
-                تهران، خیابان ولیعصر، کلینیک‌های معتبر روانشناسی
-            </p>
-        </div>
-        
-        <div class="mobile-copyright">
-            <p>تمامی حقوق این وبسایت متعلق به دکتر فاطمه فاضلی ثانی می‌باشد. © ۱۴۰۲</p>
-            <p class="mb-0">طراحی و توسعه: تیم تخصصی وب‌سایت‌های پزشکی</p>
+        <div class="copyright">
+            <p>© ۱۴۰۳ - تمامی حقوق این وبسایت متعلق به دکتر فاطمه فاضلی ثانی می‌باشد.</p>
+            <p>طراحی و توسعه: تیم تخصصی وب‌سایت‌های پزشکی</p>
         </div>
     </footer>
 
-    <!-- دکمه برگشت به بالا -->
-    <div class="back-to-top" id="backToTop">
-        <i class="fas fa-chevron-up"></i>
-    </div>
-
-    <!-- مودال رسید موبایل -->
-    <div class="modal fade receipt-modal-mobile" id="receiptModalMobile" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">رسید رزرو نوبت</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!-- مودال رسید -->
+    <div class="receipt-modal" id="receiptModal">
+        <div class="receipt-container">
+            <div class="receipt-header">
+                <h2 class="receipt-title">رسید رزرو نوبت</h2>
+                <p class="receipt-subtitle">دکتر فاطمه فاضلی ثانی | روانشناس بالینی و سلامت</p>
+            </div>
+            
+            <div class="receipt-body">
+                <div class="receipt-row">
+                    <span class="receipt-label">شماره رزرو:</span>
+                    <span class="receipt-value" id="receiptNumber">RSV-1403-001</span>
                 </div>
-                <div class="modal-body p-3">
-                    <div class="receipt-container-mobile" id="printableReceiptMobile">
-                        <div class="receipt-number-mobile">
-                            شماره: <span id="receiptIdMobile">--</span>
-                        </div>
-                        
-                        <div class="text-center mb-4">
-                            <h2 class="receipt-title-mobile">رسید رزرو نوبت</h2>
-                            <p class="receipt-subtitle-mobile">دکتر فاطمه فاضلی ثانی</p>
-                        </div>
-                        
-                        <div class="receipt-details-mobile">
-                            <div class="receipt-row-mobile">
-                                <span class="receipt-label-mobile">نام و نام خانوادگی:</span>
-                                <span class="receipt-value-mobile" id="r-name-mobile">--</span>
-                            </div>
-                            <div class="receipt-row-mobile">
-                                <span class="receipt-label-mobile">شماره تماس:</span>
-                                <span class="receipt-value-mobile" id="r-phone-mobile">--</span>
-                            </div>
-                            <div class="receipt-row-mobile">
-                                <span class="receipt-label-mobile">ایمیل:</span>
-                                <span class="receipt-value-mobile" id="r-email-mobile">--</span>
-                            </div>
-                            <div class="receipt-row-mobile">
-                                <span class="receipt-label-mobile">نوع خدمت:</span>
-                                <span class="receipt-value-mobile" id="r-service-mobile">--</span>
-                            </div>
-                            <div class="receipt-row-mobile">
-                                <span class="receipt-label-mobile">تاریخ مراجعه:</span>
-                                <span class="receipt-value-mobile" id="r-date-mobile">--</span>
-                            </div>
-                            <div class="receipt-row-mobile">
-                                <span class="receipt-label-mobile">ساعت مراجعه:</span>
-                                <span class="receipt-value-mobile" id="r-time-mobile">--</span>
-                            </div>
-                            <div class="receipt-row-mobile">
-                                <span class="receipt-label-mobile">وضعیت رزرو:</span>
-                                <span class="receipt-value-mobile text-success">تأیید شده</span>
-                            </div>
-                            <div class="receipt-row-mobile">
-                                <span class="receipt-label-mobile">تاریخ ثبت:</span>
-                                <span class="receipt-value-mobile" id="r-submit-date-mobile">--</span>
-                            </div>
-                        </div>
-                        
-                        <div class="receipt-footer-mobile mt-4 pt-3 border-top">
-                            <p class="small mb-2"><strong>لطفاً این رسید را نگهداری کنید.</strong></p>
-                            <p class="small mb-2">۱۵ دقیقه قبل از وقت مقرر در کلینیک حاضر شوید.</p>
-                            <p class="small mb-0">برای لغو نوبت، حداقل ۲۴ ساعت قبل تماس بگیرید.</p>
-                        </div>
-                        
-                        <div class="receipt-actions-mobile mt-4 d-flex gap-2 no-print-mobile">
-                            <button class="btn-mobile-primary flex-fill" onclick="window.print()">
-                                <i class="fas fa-print me-2"></i>چاپ رسید
-                            </button>
-                            <button class="btn-mobile-outline flex-fill" data-bs-dismiss="modal">
-                                <i class="fas fa-times me-2"></i>بستن
-                            </button>
-                        </div>
-                    </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">نام و نام خانوادگی:</span>
+                    <span class="receipt-value" id="receiptName">--</span>
                 </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">شماره تماس:</span>
+                    <span class="receipt-value" id="receiptPhone">--</span>
+                </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">نوع خدمت:</span>
+                    <span class="receipt-value" id="receiptService">--</span>
+                </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">تاریخ مراجعه:</span>
+                    <span class="receipt-value" id="receiptDate">--</span>
+                </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">ساعت مراجعه:</span>
+                    <span class="receipt-value" id="receiptTime">--</span>
+                </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">وضعیت:</span>
+                    <span class="receipt-value" style="color: #27ae60; font-weight: 600;">تأیید شده</span>
+                </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">تاریخ ثبت:</span>
+                    <span class="receipt-value" id="receiptSubmitDate">--</span>
+                </div>
+            </div>
+            
+            <div class="note-box" style="margin: var(--spacing-lg);">
+                <i class="fas fa-info-circle"></i>
+                لطفاً این رسید را نگهداری کنید. ۱۵ دقیقه قبل از وقت مقرر در کلینیک حاضر شوید. 
+                برای لغو نوبت، حداقل ۲۴ ساعت قبل با شماره ۰۲۱-۸۸۸۸۸۸۸۸ تماس بگیرید.
+            </div>
+            
+            <div class="receipt-actions">
+                <button class="receipt-btn receipt-btn-print" onclick="printReceipt()">
+                    <i class="fas fa-print"></i> چاپ رسید
+                </button>
+                <button class="receipt-btn receipt-btn-close" onclick="closeReceipt()">
+                    <i class="fas fa-times"></i> بستن
+                </button>
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // کنترل منوی موبایل
-        const mobileNavToggle = document.getElementById('mobileNavToggle');
-        const mobileNavMenu = document.getElementById('mobileNavMenu');
-        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-        const hamburger = document.getElementById('hamburger');
-        
-        mobileNavToggle.addEventListener('click', function() {
-            mobileNavMenu.classList.toggle('active');
-            mobileNavOverlay.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
-        
-        mobileNavOverlay.addEventListener('click', function() {
-            mobileNavMenu.classList.remove('active');
-            mobileNavOverlay.classList.remove('active');
-            hamburger.classList.remove('active');
-        });
-        
-        // بستن منو هنگام کلیک روی لینک‌ها
-        document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            link.addEventListener('click', function() {
-                mobileNavMenu.classList.remove('active');
-                mobileNavOverlay.classList.remove('active');
-                hamburger.classList.remove('active');
-            });
-        });
-        
-        // تولید تاریخ‌های قابل انتخاب برای موبایل
-        function generateDatesMobile() {
-            const dateContainer = document.getElementById('dateSelectionMobile');
+        // تولید تاریخ‌های قابل انتخاب
+        function generateDates() {
+            const container = document.getElementById('dateSelection');
             const today = new Date();
-            
-            // پاک‌سازی قبلی
-            dateContainer.innerHTML = '';
             
             for (let i = 1; i <= 7; i++) {
                 const date = new Date();
                 date.setDate(today.getDate() + i);
                 
-                // نمایش تاریخ به شکل فارسی (ساده‌تر)
                 const day = date.getDate();
                 const month = date.toLocaleDateString('fa-IR', { month: 'short' });
                 const weekday = date.toLocaleDateString('fa-IR', { weekday: 'short' });
-                const dateString = `${weekday} ${day} ${month}`;
                 
-                const dateElement = document.createElement('div');
-                dateElement.className = 'time-slot-mobile';
-                dateElement.textContent = dateString;
-                dateElement.dataset.date = date.toISOString().split('T')[0];
+                const btn = document.createElement('button');
+                btn.className = 'time-slot-btn';
+                btn.innerHTML = `${weekday}<br><small>${day} ${month}</small>`;
+                btn.dataset.date = date.toISOString().split('T')[0];
                 
-                dateElement.addEventListener('click', function() {
-                    // حذف کلاس selected از همه تاریخ‌ها
-                    document.querySelectorAll('#dateSelectionMobile .time-slot-mobile').forEach(el => {
-                        el.classList.remove('selected');
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('#dateSelection .time-slot-btn').forEach(b => {
+                        b.classList.remove('selected');
                     });
-                    
-                    // اضافه کردن کلاس selected به تاریخ انتخاب شده
                     this.classList.add('selected');
-                    generateTimesMobile();
                 });
                 
-                dateContainer.appendChild(dateElement);
+                container.appendChild(btn);
             }
             
-            // انتخاب اولین تاریخ به صورت پیش‌فرض
-            if (dateContainer.firstChild) {
-                dateContainer.firstChild.classList.add('selected');
-                generateTimesMobile();
+            // انتخاب اولین تاریخ
+            if (container.firstChild) {
+                container.firstChild.classList.add('selected');
             }
         }
         
-        // تولید ساعت‌های قابل انتخاب برای موبایل
-        function generateTimesMobile() {
-            const timeContainer = document.getElementById('timeSelectionMobile');
-            timeContainer.innerHTML = '';
+        // تولید ساعت‌های قابل انتخاب
+        function generateTimes() {
+            const container = document.getElementById('timeSelection');
+            const times = ['۱۶:۰۰', '۱۷:۰۰', '۱۸:۰۰', '۱۹:۰۰', '۲۰:۰۰'];
             
-            // ساعت‌های کاری
-            const timeSlots = ['۱۶:۰۰', '۱۷:۰۰', '۱۸:۰۰', '۱۹:۰۰', '۲۰:۰۰'];
-            
-            timeSlots.forEach(time => {
-                const timeElement = document.createElement('div');
-                timeElement.className = 'time-slot-mobile';
-                timeElement.textContent = time;
+            times.forEach(time => {
+                const btn = document.createElement('button');
+                btn.className = 'time-slot-btn';
+                btn.textContent = time;
                 
-                timeElement.addEventListener('click', function() {
-                    // حذف کلاس selected از همه ساعت‌ها
-                    document.querySelectorAll('#timeSelectionMobile .time-slot-mobile').forEach(el => {
-                        el.classList.remove('selected');
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('#timeSelection .time-slot-btn').forEach(b => {
+                        b.classList.remove('selected');
                     });
-                    
-                    // اضافه کردن کلاس selected به ساعت انتخاب شده
                     this.classList.add('selected');
                 });
                 
-                timeContainer.appendChild(timeElement);
+                container.appendChild(btn);
             });
             
-            // انتخاب اولین ساعت به صورت پیش‌فرض
-            if (timeContainer.firstChild) {
-                timeContainer.firstChild.classList.add('selected');
+            // انتخاب اولین ساعت
+            if (container.firstChild) {
+                container.firstChild.classList.add('selected');
             }
         }
         
-        // تولید شماره رزرو تصادفی
-        function generateReservationIdMobile() {
-            const timestamp = Date.now().toString().slice(-6);
-            const randomNum = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
-            return `RSV-${timestamp}${randomNum}`;
-        }
-        
-        // تبدیل کد سرویس به نام فارسی
-        function getServiceNameMobile(serviceCode) {
-            const services = {
+        // ثبت رزرو
+        function submitBooking() {
+            const name = document.getElementById('fullName').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const service = document.getElementById('serviceType').value;
+            const selectedDate = document.querySelector('#dateSelection .selected');
+            const selectedTime = document.querySelector('#timeSelection .selected');
+            
+            // اعتبارسنجی
+            if (!name) {
+                alert('لطفاً نام و نام خانوادگی را وارد کنید');
+                return;
+            }
+            
+            if (!phone || !/^09[0-9]{9}$/.test(phone)) {
+                alert('لطفاً شماره تلفن معتبر وارد کنید (شروع با 09 و 11 رقمی)');
+                return;
+            }
+            
+            if (!service) {
+                alert('لطفاً نوع خدمت را انتخاب کنید');
+                return;
+            }
+            
+            if (!selectedDate) {
+                alert('لطفاً تاریخ مراجعه را انتخاب کنید');
+                return;
+            }
+            
+            if (!selectedTime) {
+                alert('لطفاً ساعت مراجعه را انتخاب کنید');
+                return;
+            }
+            
+            // تولید شماره رزرو
+            const receiptNumber = 'RSV-' + new Date().getFullYear() + '-' + 
+                Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+            
+            // پر کردن اطلاعات رسید
+            document.getElementById('receiptNumber').textContent = receiptNumber;
+            document.getElementById('receiptName').textContent = name;
+            document.getElementById('receiptPhone').textContent = phone;
+            
+            const serviceNames = {
                 'individual': 'درمان هیجان‌مدار فردی',
                 'couple': 'زوج درمانی هیجان‌مدار',
                 'supervision': 'سوپرویژن درمان هیجان‌مدار',
                 'consultation': 'مشاوره تخصصی'
             };
-            return services[serviceCode] || 'نامشخص';
-        }
-        
-        // نمایش رسید موبایل
-        function showReceiptMobile(formData) {
-            // پر کردن اطلاعات رسید
-            document.getElementById('receiptIdMobile').textContent = generateReservationIdMobile();
-            document.getElementById('r-name-mobile').textContent = formData.name;
-            document.getElementById('r-phone-mobile').textContent = formData.phone;
-            document.getElementById('r-email-mobile').textContent = formData.email || 'وارد نشده';
-            document.getElementById('r-service-mobile').textContent = getServiceNameMobile(formData.service);
-            document.getElementById('r-date-mobile').textContent = document.querySelector('#dateSelectionMobile .selected').textContent;
-            document.getElementById('r-time-mobile').textContent = formData.time;
+            document.getElementById('receiptService').textContent = serviceNames[service] || service;
             
-            // تاریخ امروز به فارسی
+            document.getElementById('receiptDate').textContent = selectedDate.textContent;
+            document.getElementById('receiptTime').textContent = selectedTime.textContent;
+            
             const today = new Date();
             const todayString = today.toLocaleDateString('fa-IR', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric'
             });
-            document.getElementById('r-submit-date-mobile').textContent = todayString;
-            
-            // نمایش مودال
-            const receiptModalMobile = new bootstrap.Modal(document.getElementById('receiptModalMobile'));
-            receiptModalMobile.show();
-        }
-        
-        // مدیریت ارسال فرم موبایل
-        document.getElementById('bookingFormMobile').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // اعتبارسنجی شماره تلفن
-            const phoneInput = document.getElementById('phoneMobile');
-            const phoneRegex = /^09[0-9]{9}$/;
-            
-            if (!phoneRegex.test(phoneInput.value)) {
-                alert('لطفاً شماره تلفن معتبر وارد کنید (شماره باید با 09 شروع شود و 11 رقمی باشد)');
-                phoneInput.focus();
-                return;
-            }
-            
-            // بررسی انتخاب تاریخ
-            const selectedDate = document.querySelector('#dateSelectionMobile .selected');
-            if (!selectedDate) {
-                alert('لطفاً یک تاریخ را انتخاب کنید');
-                return;
-            }
-            
-            // بررسی انتخاب ساعت
-            const selectedTime = document.querySelector('#timeSelectionMobile .selected');
-            if (!selectedTime) {
-                alert('لطفاً یک ساعت را انتخاب کنید');
-                return;
-            }
-            
-            // جمع‌آوری اطلاعات فرم
-            const formData = {
-                name: document.getElementById('fullNameMobile').value,
-                phone: document.getElementById('phoneMobile').value,
-                email: document.getElementById('emailMobile').value,
-                service: document.getElementById('serviceTypeMobile').value,
-                date: selectedDate.dataset.date,
-                time: selectedTime.textContent,
-                notes: document.getElementById('notesMobile').value
-            };
+            document.getElementById('receiptSubmitDate').textContent = todayString;
             
             // نمایش رسید
-            showReceiptMobile(formData);
+            document.getElementById('receiptModal').classList.add('active');
             
-            // در حالت واقعی، اطلاعات به سرور ارسال می‌شود
-            setTimeout(() => {
-                console.log('ارسال اطلاعات به سرور:', formData);
-            }, 1000);
+            // پاک کردن فرم
+            document.getElementById('fullName').value = '';
+            document.getElementById('phone').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('serviceType').value = '';
+            document.getElementById('notes').value = '';
             
-            // ریست کردن فرم
-            this.reset();
-            generateDatesMobile();
-        });
-        
-        // کنترل دکمه برگشت به بالا
-        const backToTop = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                backToTop.classList.add('active');
-            } else {
-                backToTop.classList.remove('active');
-            }
-        });
-        
-        backToTop.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+            document.querySelectorAll('.time-slot-btn.selected').forEach(btn => {
+                btn.classList.remove('selected');
             });
-        });
+            
+            generateDates();
+            generateTimes();
+        }
         
-        // بهبود تجربه لمسی
-        document.addEventListener('touchstart', function() {}, {passive: true});
+        // بستن رسید
+        function closeReceipt() {
+            document.getElementById('receiptModal').classList.remove('active');
+        }
         
-        // جلوگیری از زوم روی input در iOS
-        document.addEventListener('touchmove', function(e) {
-            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') {
-                e.preventDefault();
-            }
-        }, {passive: false});
+        // چاپ رسید
+        function printReceipt() {
+            window.print();
+        }
+        
+        // اسکرول به بخش رزرو
+        function scrollToBooking() {
+            document.getElementById('booking').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+        
+        // اسکرول به بخش سوابق
+        function scrollToAbout() {
+            document.getElementById('about').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
         
         // مقداردهی اولیه
         document.addEventListener('DOMContentLoaded', function() {
-            generateDatesMobile();
+            generateDates();
+            generateTimes();
             
-            // بهبود اسکرول برای موبایل
-            if ('scrollBehavior' in document.documentElement.style) {
-                // مرورگر از اسکرول نرم پشتیبانی می‌کند
-            } else {
-                // برای مرورگرهای قدیمی
-                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                    anchor.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        
-                        const targetId = this.getAttribute('href');
-                        if (targetId === '#') return;
-                        
-                        const targetElement = document.querySelector(targetId);
-                        if (targetElement) {
-                            const targetPosition = targetElement.offsetTop - 70;
-                            window.scrollTo({
-                                top: targetPosition,
-                                behavior: 'instant'
-                            });
-                        }
-                    });
-                });
-            }
-        });
-        
-        // بهبود نمایش صفحه در لود
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                window.scrollTo(0, 0);
-            }, 100);
+            // بهبود تجربه لمسی
+            document.addEventListener('touchstart', function() {}, { passive: true });
+            
+            // اضافه کردن padding-bottom برای safe area در iOS
+            document.body.style.paddingBottom = 'env(safe-area-inset-bottom)';
+            
+            // بستن رسید با کلیک بیرون
+            document.getElementById('receiptModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeReceipt();
+                }
+            });
         });
     </script>
 </body>
