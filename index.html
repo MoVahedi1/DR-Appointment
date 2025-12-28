@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دکتر فاطمه فاضلی ثانی | روانشناس بالینی و سلامت | رزرو نوبت</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a5f7a;
+            --secondary-color: #57a6c7;
+            --accent-color: #9c4d9b;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --success-color: #28a745;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --border-radius: 10px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Vazirmatn', 'Noto Naskh Arabic', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+        
+        .header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark-color) !important;
+            margin: 0 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, rgba(26, 95, 122, 0.9) 0%, rgba(87, 166, 199, 0.85) 100%), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            margin-bottom: 50px;
+        }
+        
+        .hero-title {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 70px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .card {
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .doctor-photo {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: var(--shadow);
+        }
+        
+        .info-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            height: 100%;
+        }
+        
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(26, 95, 122, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        .booking-section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+        }
+        
+        .time-slot {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .time-slot:hover {
+            background-color: rgba(26, 95, 122, 0.1);
+            border-color: var(--primary-color);
+        }
+        
+        .time-slot.selected {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .receipt-container {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--primary-color);
+            position: relative;
+        }
+        
+        .receipt-header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px dashed var(--primary-color);
+            padding-bottom: 20px;
+        }
+        
+        .receipt-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .receipt-subtitle {
+            color: var(--dark-color);
+            font-size: 1.1rem;
+        }
+        
+        .receipt-details {
+            margin-bottom: 30px;
+        }
+        
+        .receipt-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .receipt-label {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .receipt-value {
+            color: #555;
+            text-align: left;
+        }
+        
+        .receipt-footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px dashed var(--primary-color);
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .receipt-number {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        .receipt-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .modal-content {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        
+        .modal-header {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .clinic-logo {
+            height: 40px;
+            margin: 0 10px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .clinic-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+        
+        .footer a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* استایل‌های چاپ */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            
+            .receipt-print, .receipt-print * {
+                visibility: visible;
+            }
+            
+            .receipt-print {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                padding: 20px;
+            }
+            
+            .no-print {
+                display: none !important;
+            }
+        }
+        
+        /* رزپانسیو */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .doctor-photo {
+                width: 180px;
+                height: 180px;
+                margin-bottom: 20px;
+            }
+            
+            .receipt-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- هدر و ناوبری -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <i class="fas fa-brain me-2"></i>دکتر فاطمه فاضلی ثانی
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">خانه</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">درباره دکتر</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#booking">رزرو نوبت</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#specialties">حوزه تخصصی</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#publications">کتاب‌ها</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">تماس</a>
+                        </li>
+                    </ul>
+                    <a href="#booking" class="btn btn-primary">
+                        <i class="fas fa-calendar-check me-2"></i>رزرو نوبت آنلاین
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- بخش معرفی -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="hero-title">دکتر فاطمه فاضلی ثانی</h1>
+                    <h2 class="hero-subtitle">دکترای روانشناسی بالینی | روانشناس بالینی و سلامت | مدرس دانشگاه | متخصص درمان هیجان‌مدار (EFT)</h2>
+                    <p class="mb-4">با بیش از یک دهه تجربه در حوزه روانشناسی بالینی، درمان هیجان‌مدار و آموزش تخصصی</p>
+                    <a href="#booking" class="btn btn-primary btn-lg me-3">
+                        <i class="fas fa-calendar-plus me-2"></i>رزرو نوبت آنلاین
+                    </a>
+                    <a href="#about" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-user-md me-2"></i>مشاهده سوابق
+                    </a>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="دکتر فاطمه فاضلی ثانی" class="doctor-photo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش اصلی رزرو نوبت -->
+    <section id="booking" class="py-5">
+        <div class="container">
+            <h2 class="section-title">رزرو نوبت آنلاین</h2>
+            <div class="row">
+                <!-- فرم رزرو نوبت -->
+                <div class="col-lg-8">
+                    <div class="booking-section">
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i>
+                            لطفاً اطلاعات زیر را برای رزرو نوبت تکمیل نمایید. پس از ثبت درخواست، همکاران ما با شما تماس خواهند گرفت.
+                        </div>
+                        
+                        <form id="bookingForm">
+                            <div class="row mb-4">
+                                <div class="col-md-6 mb-3">
+                                    <label for="fullName" class="form-label">نام و نام خانوادگی *</label>
+                                    <input type="text" class="form-control" id="fullName" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">شماره تماس *</label>
+                                    <input type="tel" class="form-control" id="phone" required placeholder="09XXXXXXXXX">
+                                    <div class="form-text">شماره همراه خود را با صفر وارد کنید</div>
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-4">
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">آدرس ایمیل</label>
+                                    <input type="email" class="form-control" id="email" placeholder="example@email.com">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="serviceType" class="form-label">نوع خدمات درخواستی *</label>
+                                    <select class="form-select" id="serviceType" required>
+                                        <option value="" selected disabled>لطفاً انتخاب کنید</option>
+                                        <option value="individual">درمان هیجان‌مدار فردی</option>
+                                        <option value="couple">زوج درمانی هیجان‌مدار</option>
+                                        <option value="supervision">سوپرویژن درمان هیجان‌مدار</option>
+                                        <option value="consultation">مشاوره تخصصی</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label">انتخاب تاریخ *</label>
+                                <div class="d-flex flex-wrap" id="dateSelection">
+                                    <!-- تاریخ‌ها توسط جاوااسکریپت تولید می‌شوند -->
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label">انتخاب ساعت *</label>
+                                <div class="d-flex flex-wrap" id="timeSelection">
+                                    <!-- ساعت‌ها توسط جاوااسکریپت تولید می‌شوند -->
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="notes" class="form-label">توضیحات (اختیاری)</label>
+                                <textarea class="form-control" id="notes" rows="3" placeholder="در صورت نیاز، توضیحات اضافه را وارد نمایید..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-lg w-100">
+                                <i class="fas fa-paper-plane me-2"></i>ثبت درخواست رزرو نوبت
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- اطلاعات کلینیک‌ها و ساعات کاری -->
+                <div class="col-lg-4">
+                    <div class="info-card mb-4">
+                        <div class="icon-box">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h4>کلینیک‌های فعال</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-clinic-medical text-primary me-2"></i>کلینیک طوس</li>
+                            <li class="mb-2"><i class="fas fa-clinic-medical text-primary me-2"></i>کلینیک بهسا</li>
+                            <li class="mb-2"><i class="fas fa-clinic-medical text-primary me-2"></i>کلینیک مانوشان</li>
+                            <li class="mb-2"><i class="fas fa-clinic-medical text-primary me-2"></i>کلینیک دنیای امن</li>
+                            <li><i class="fas fa-clinic-medical text-primary me-2"></i>کلینیک نیکان</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card mb-4">
+                        <div class="icon-box">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>ساعات کاری</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><strong>شنبه تا چهارشنبه:</strong> ۱۶:۰۰ - ۲۰:۰۰</li>
+                            <li class="mb-2"><strong>پنج‌شنبه:</strong> ۱۰:۰۰ - ۱۴:۰۰</li>
+                            <li><strong>جمعه:</strong> تعطیل</li>
+                        </ul>
+                        <div class="alert alert-warning mt-3">
+                            <small><i class="fas fa-exclamation-circle me-2"></i>نوبت‌ها محدود و با هماهنگی قبلی می‌باشند.</small>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="icon-box">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h4>راه‌های ارتباطی</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-phone text-primary me-2"></i>۰۲۱ - ۸۸۸۸۸۸۸۸</li>
+                            <li class="mb-2"><i class="fas fa-mobile-alt text-primary me-2"></i>۰۹۱۲ - ۱۲۳۴۵۶۷</li>
+                            <li><i class="fas fa-envelope text-primary me-2"></i>info@drfazelisani.ir</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- درباره دکتر -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">درباره دکتر فاطمه فاضلی ثانی</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="info-card">
+                        <h4 class="mb-4">سوابق تحصیلی</h4>
+                        <ul>
+                            <li class="mb-3">
+                                <h5>دکترای روانشناسی سلامت</h5>
+                                <p class="text-muted">گرایش روانشناسی سلامت</p>
+                            </li>
+                            <li class="mb-3">
+                                <h5>کارشناسی ارشد روانشناسی بالینی</h5>
+                                <p class="text-muted">گرایش روانشناسی بالینی</p>
+                            </li>
+                            <li>
+                                <h5>کارشناسی روانشناسی بالینی</h5>
+                                <p class="text-muted">گرایش روانشناسی بالینی</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="info-card">
+                        <h4 class="mb-4">سوابق حرفه‌ای</h4>
+                        <ul>
+                            <li class="mb-3">مدرس دانشگاه در حوزه روانشناسی بالینی و سلامت</li>
+                            <li class="mb-3">مدرس دوره‌های درمان هیجان‌مدار (EFT)</li>
+                            <li>مدرس آزمون شخصیت SWAP (تنها آزمون مورد تأیید انجمن روانکاوی آمریکا)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-lg-6 mb-4">
+                    <div class="info-card">
+                        <h4 class="mb-4">عضویت‌های حرفه‌ای</h4>
+                        <ul>
+                            <li class="mb-2">عضو انجمن بین‌المللی درمان هیجان‌مدار (ISEFT)</li>
+                            <li>عضو حرفه‌ای انجمن درمان هیجان‌مدار (ICEEFT)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="info-card">
+                        <h4 class="mb-4">دوره‌های آموزش تخصصی</h4>
+                        <div style="max-height: 300px; overflow-y: auto; padding-right: 10px;">
+                            <ul>
+                                <li class="mb-2">تحلیل فیلم‌های درمانی و سوپرویژن با پروفسور لس گرینبرگ (20 ساعت)</li>
+                                <li class="mb-2">ورکشاپ مقدماتی (Level 1) درمان هیجان‌مدار با پروفسور رابرت الیوت (8 روز)</li>
+                                <li class="mb-2">ورکشاپ پیشرفته (Level 2) درمان هیجان‌مدار با پروفسور لس گرینبرگ (6 روز)</li>
+                                <li class="mb-2">ورکشاپ پیشرفته (Level 3) و سوپرویژن گروهی درمان هیجان‌مدار با پروفسور لس گرینبرگ (4 روز)</li>
+                                <li class="mb-2">ورکشاپ همدلی پیشرفته در درمان هیجان‌مدار با پروفسور رابرت الیوت (6 روز)</li>
+                                <li>ورکشاپ‌های زوج‌درمانی هیجان‌مدار (Level 1 & 2) با تأییدیه ICEEFT</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- حوزه‌های تخصصی -->
+    <section id="specialties" class="py-5">
+        <div class="container">
+            <h2 class="section-title">حوزه‌های تخصصی</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center p-4">
+                        <div class="icon-box mx-auto">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <h4 class="my-3">درمان هیجان‌مدار (فردی و زوج)</h4>
+                        <p>ارائه خدمات تخصصی درمان هیجان‌مدار برای افراد و زوج‌ها با استفاده از آخرین روش‌های علمی و مؤثر</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center p-4">
+                        <div class="icon-box mx-auto">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4 class="my-3">آموزش و سوپرویژن</h4>
+                        <p>آموزش تخصصی درمان هیجان‌مدار و سوپرویژن حرفه‌ای برای روانشناسان و درمانگران</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center p-4">
+                        <div class="icon-box mx-auto">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h4 class="my-3">پژوهش و ترجمه</h4>
+                        <p>پژوهش و ترجمه تخصصی در حوزه درمان هیجان‌مدار و ذهن‌آگاهی با تألیف کتب معتبر</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- کتاب‌ها و تألیفات -->
+    <section id="publications" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">کتاب‌ها و تألیفات</h2>
+            
+            <div class="row mb-5">
+                <div class="col-md-6">
+                    <div class="info-card h-100">
+                        <h4 class="mb-4">کتاب‌های تألیفی</h4>
+                        <ul>
+                            <li class="mb-2">روانشناسی فیزیولوژیک</li>
+                            <li class="mb-2">روانشناسی اعصاب و غدد درون‌ریز</li>
+                            <li class="mb-2">نکات کنکوری روانشناسی فیزیولوژیک و اعصاب و غدد درون‌ریز</li>
+                            <li class="mb-2">آموزش درمان هیجان‌مدار</li>
+                            <li class="mb-2">من و هیجاناتم</li>
+                            <li>آموزش زوج‌درمانی هیجان‌مدار</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="info-card h-100">
+                        <h4 class="mb-4">کتاب‌های ترجمه شده</h4>
+                        <ul>
+                            <li class="mb-2">فرمول‌بندی موردی در درمان هیجان‌مدار</li>
+                            <li class="mb-2">ذهن‌آگاهی: مسیری به خودشفقتی</li>
+                            <li class="mb-2">ذهن‌آگاهی</li>
+                            <li class="mb-2">مطالعه موردی در درمان افسردگی</li>
+                            <li>هندبوک درمان هیجان‌مدار</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- کلینیک‌های همکار -->
+            <div class="text-center mt-5">
+                <h4 class="mb-4">همکاری با کلینیک‌های معتبر</h4>
+                <div class="d-flex flex-wrap justify-content-center align-items-center">
+                    <span class="clinic-logo">کلینیک طوس</span>
+                    <span class="clinic-logo">کلینیک بهسا</span>
+                    <span class="clinic-logo">کلینیک مانوشان</span>
+                    <span class="clinic-logo">کلینیک دنیای امن</span>
+                    <span class="clinic-logo">کلینیک نیکان</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4 class="mb-4">دکتر فاطمه فاضلی ثانی</h4>
+                    <p>دکترای روانشناسی بالینی، روانشناس بالینی و سلامت، مدرس دانشگاه و متخصص درمان هیجان‌مدار (EFT)</p>
+                    <div class="mt-4">
+                        <a href="#" class="btn btn-outline-light me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-light me-2"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="btn btn-outline-light me-2"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="btn btn-outline-light"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h4 class="mb-4">دسترسی سریع</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#"><i class="fas fa-chevron-left me-2"></i>صفحه اصلی</a></li>
+                        <li class="mb-2"><a href="#about"><i class="fas fa-chevron-left me-2"></i>درباره دکتر</a></li>
+                        <li class="mb-2"><a href="#booking"><i class="fas fa-chevron-left me-2"></i>رزرو نوبت</a></li>
+                        <li class="mb-2"><a href="#specialties"><i class="fas fa-chevron-left me-2"></i>حوزه تخصصی</a></li>
+                        <li><a href="#publications"><i class="fas fa-chevron-left me-2"></i>کتاب‌ها</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h4 class="mb-4">اطلاعات تماس</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-map-marker-alt me-3"></i>تهران، خیابان ولیعصر، کلینیک‌های معتبر روانشناسی</li>
+                        <li class="mb-3"><i class="fas fa-phone me-3"></i>۰۲۱ - ۸۸۸۸۸۸۸۸</li>
+                        <li class="mb-3"><i class="fas fa-mobile-alt me-3"></i>۰۹۱۲ - ۱۲۳۴۵۶۷</li>
+                        <li><i class="fas fa-envelope me-3"></i>info@drfazelisani.ir</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>تمامی حقوق این وبسایت متعلق به دکتر فاطمه فاضلی ثانی می‌باشد. © ۱۴۰۲</p>
+                <p class="mb-0">طراحی و توسعه: تیم تخصصی وب‌سایت‌های پزشکی</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- مودال رسید -->
+    <div class="modal fade" id="receiptModal" tabindex="-1" aria-labelledby="receiptModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="receiptModalLabel">رسید رزرو نوبت</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="receipt-container" id="printableReceipt">
+                        <div class="receipt-number">
+                            شماره رزرو: <span id="receiptId">--</span>
+                        </div>
+                        
+                        <div class="receipt-header">
+                            <h2 class="receipt-title">رسید رزرو نوبت</h2>
+                            <p class="receipt-subtitle">دکتر فاطمه فاضلی ثانی | روانشناس بالینی و سلامت</p>
+                        </div>
+                        
+                        <div class="receipt-details">
+                            <div class="receipt-row">
+                                <span class="receipt-label">نام و نام خانوادگی:</span>
+                                <span class="receipt-value" id="r-name">--</span>
+                            </div>
+                            <div class="receipt-row">
+                                <span class="receipt-label">شماره تماس:</span>
+                                <span class="receipt-value" id="r-phone">--</span>
+                            </div>
+                            <div class="receipt-row">
+                                <span class="receipt-label">ایمیل:</span>
+                                <span class="receipt-value" id="r-email">--</span>
+                            </div>
+                            <div class="receipt-row">
+                                <span class="receipt-label">نوع خدمت:</span>
+                                <span class="receipt-value" id="r-service">--</span>
+                            </div>
+                            <div class="receipt-row">
+                                <span class="receipt-label">تاریخ مراجعه:</span>
+                                <span class="receipt-value" id="r-date">--</span>
+                            </div>
+                            <div class="receipt-row">
+                                <span class="receipt-label">ساعت مراجعه:</span>
+                                <span class="receipt-value" id="r-time">--</span>
+                            </div>
+                            <div class="receipt-row">
+                                <span class="receipt-label">وضعیت رزرو:</span>
+                                <span class="receipt-value text-success">تأیید شده</span>
+                            </div>
+                            <div class="receipt-row">
+                                <span class="receipt-label">تاریخ ثبت:</span>
+                                <span class="receipt-value" id="r-submit-date">--</span>
+                            </div>
+                        </div>
+                        
+                        <div class="receipt-footer">
+                            <p><strong>لطفاً این رسید را نگهداری کنید و 15 دقیقه قبل از وقت مقرر در کلینیک حاضر شوید.</strong></p>
+                            <p>در صورت نیاز به لغو نوبت، لطفاً حداقل 24 ساعت قبل از زمان نوبت با شماره ۰۲۱-۸۸۸۸۸۸۸۸ تماس بگیرید.</p>
+                            <p>آدرس: تهران، خیابان ولیعصر، کلینیک‌های معتبر روانشناسی</p>
+                        </div>
+                        
+                        <div class="receipt-actions no-print">
+                            <button class="btn btn-primary" onclick="window.print()">
+                                <i class="fas fa-print me-2"></i>چاپ رسید
+                            </button>
+                            <button class="btn btn-outline-primary" data-bs-dismiss="modal">
+                                <i class="fas fa-times me-2"></i>بستن
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // تولید تاریخ‌های قابل انتخاب (7 روز آینده)
+        function generateDates() {
+            const dateContainer = document.getElementById('dateSelection');
+            const today = new Date();
+            
+            for (let i = 1; i <= 7; i++) {
+                const date = new Date();
+                date.setDate(today.getDate() + i);
+                
+                // نمایش تاریخ به شکل فارسی
+                const options = { weekday: 'long', month: 'long', day: 'numeric' };
+                const dateString = date.toLocaleDateString('fa-IR', options);
+                
+                const dateElement = document.createElement('div');
+                dateElement.className = 'time-slot';
+                dateElement.textContent = dateString;
+                dateElement.dataset.date = date.toISOString().split('T')[0];
+                
+                dateElement.addEventListener('click', function() {
+                    // حذف کلاس selected از همه تاریخ‌ها
+                    document.querySelectorAll('#dateSelection .time-slot').forEach(el => {
+                        el.classList.remove('selected');
+                    });
+                    
+                    // اضافه کردن کلاس selected به تاریخ انتخاب شده
+                    this.classList.add('selected');
+                    generateTimes();
+                });
+                
+                dateContainer.appendChild(dateElement);
+            }
+            
+            // انتخاب اولین تاریخ به صورت پیش‌فرض
+            if (dateContainer.firstChild) {
+                dateContainer.firstChild.classList.add('selected');
+                generateTimes();
+            }
+        }
+        
+        // تولید ساعت‌های قابل انتخاب
+        function generateTimes() {
+            const timeContainer = document.getElementById('timeSelection');
+            timeContainer.innerHTML = '';
+            
+            // ساعت‌های کاری
+            const timeSlots = ['۱۶:۰۰', '۱۷:۰۰', '۱۸:۰۰', '۱۹:۰۰', '۲۰:۰۰'];
+            
+            timeSlots.forEach(time => {
+                const timeElement = document.createElement('div');
+                timeElement.className = 'time-slot';
+                timeElement.textContent = time;
+                
+                timeElement.addEventListener('click', function() {
+                    // حذف کلاس selected از همه ساعت‌ها
+                    document.querySelectorAll('#timeSelection .time-slot').forEach(el => {
+                        el.classList.remove('selected');
+                    });
+                    
+                    // اضافه کردن کلاس selected به ساعت انتخاب شده
+                    this.classList.add('selected');
+                });
+                
+                timeContainer.appendChild(timeElement);
+            });
+            
+            // انتخاب اولین ساعت به صورت پیش‌فرض
+            if (timeContainer.firstChild) {
+                timeContainer.firstChild.classList.add('selected');
+            }
+        }
+        
+        // تولید شماره رزرو تصادفی
+        function generateReservationId() {
+            const timestamp = Date.now().toString().slice(-6);
+            const randomNum = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+            return `RSV-${timestamp}${randomNum}`;
+        }
+        
+        // نمایش رسید
+        function showReceipt(formData) {
+            // پر کردن اطلاعات رسید
+            document.getElementById('receiptId').textContent = generateReservationId();
+            document.getElementById('r-name').textContent = formData.name;
+            document.getElementById('r-phone').textContent = formData.phone;
+            document.getElementById('r-email').textContent = formData.email || 'وارد نشده';
+            document.getElementById('r-service').textContent = getServiceName(formData.service);
+            document.getElementById('r-date').textContent = document.querySelector('#dateSelection .selected').textContent;
+            document.getElementById('r-time').textContent = formData.time;
+            
+            // تاریخ امروز به فارسی
+            const today = new Date();
+            const todayString = today.toLocaleDateString('fa-IR', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            document.getElementById('r-submit-date').textContent = todayString;
+            
+            // نمایش مودال
+            const receiptModal = new bootstrap.Modal(document.getElementById('receiptModal'));
+            receiptModal.show();
+        }
+        
+        // تبدیل کد سرویس به نام فارسی
+        function getServiceName(serviceCode) {
+            const services = {
+                'individual': 'درمان هیجان‌مدار فردی',
+                'couple': 'زوج درمانی هیجان‌مدار',
+                'supervision': 'سوپرویژن درمان هیجان‌مدار',
+                'consultation': 'مشاوره تخصصی'
+            };
+            return services[serviceCode] || 'نامشخص';
+        }
+        
+        // مدیریت ارسال فرم
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // اعتبارسنجی شماره تلفن
+            const phoneInput = document.getElementById('phone');
+            const phoneRegex = /^09[0-9]{9}$/;
+            
+            if (!phoneRegex.test(phoneInput.value)) {
+                alert('لطفاً شماره تلفن معتبر وارد کنید (شماره باید با 09 شروع شود و 11 رقمی باشد)');
+                phoneInput.focus();
+                return;
+            }
+            
+            // جمع‌آوری اطلاعات فرم
+            const formData = {
+                name: document.getElementById('fullName').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                service: document.getElementById('serviceType').value,
+                date: document.querySelector('#dateSelection .selected').dataset.date,
+                time: document.querySelector('#timeSelection .selected').textContent,
+                notes: document.getElementById('notes').value
+            };
+            
+            // نمایش رسید
+            showReceipt(formData);
+            
+            // در حالت واقعی، اطلاعات به سرور ارسال می‌شود
+            // شبیه‌سازی ارسال به سرور
+            setTimeout(() => {
+                // اینجا کد ارسال به سرور قرار می‌گیرد
+                console.log('ارسال اطلاعات به سرور:', formData);
+            }, 1000);
+            
+            // ریست کردن فرم
+            this.reset();
+            generateDates();
+        });
+        
+        // اسکرول نرم برای لینک‌های داخلی
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // مقداردهی اولیه
+        document.addEventListener('DOMContentLoaded', function() {
+            generateDates();
+            
+            // تغییر استایل ناوبری هنگام اسکرول
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 100) {
+                    navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+                } else {
+                    navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
